@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>APIVerve.API.LoanCalculator</Title>
+    <Version>1.0.0</Version>
+    <Authors>APIVerve</Authors>
+    <Company>APIVerve</Company>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageProjectUrl>https://apiverve.com/marketplace/api/loanpaymentcalculator</PackageProjectUrl>
+    <SignAssembly>False</SignAssembly>
+    <Description>Loan Payment Calculator is a simple tool for calculating loan payments. It returns the monthly payment, total interest, and more.</Description>
+    <RepositoryUrl>https://github.com/apiverve/loanpaymentcalculator-NET</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>loan payment calculator; loan; loan payments; loan payment calculator api; loan api; loan payment calculator tool; loan tool; loan payment calculator software; loan software; loan payment calculator service; loan service; loan payment calculator library; loan library; loan payment calculator sdk; loan sdk; loan payment calculator code; loan code; loan payment calculator script; loan script; loan payment calculator program; loan program; loan payment calculator application; loan application; loan app; loan utility; loan helper; loan helper tool; loan helper software; loan helper service; loan helper library; loan helper sdk; loan helper code; loan helper script; loan helper program; loan helper application; loan helper app; loan helper tool; loan helper utility; loan helper</PackageTags>
+    <Copyright>©2024 APIVerve. All Rights Reserved</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
