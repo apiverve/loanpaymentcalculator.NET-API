@@ -1,38 +1,69 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>APIVerve.API.LoanCalculator</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.5</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <IncludeContentInPack>true</IncludeContentInPack>
+
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <PackageProjectUrl>https://apiverve.com/marketplace/api/loanpaymentcalculator</PackageProjectUrl>
+    <PackageProjectUrl>https://apiverve.com/?utm_source=nuget</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
     <Description>Loan Payment Calculator is a simple tool for calculating loan payments. It returns the monthly payment, total interest, and more.</Description>
-    <RepositoryUrl>https://github.com/apiverve/loanpaymentcalculator-NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/apiverve/loanpaymentcalculator.NET-API</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>loan payment calculator; loan; loan payments; loan payment calculator api; loan api; loan payment calculator tool; loan tool; loan payment calculator software; loan software; loan payment calculator service; loan service; loan payment calculator library; loan library; loan payment calculator sdk; loan sdk; loan payment calculator code; loan code; loan payment calculator script; loan script; loan payment calculator program; loan program; loan payment calculator application; loan application; loan app; loan utility; loan helper; loan helper tool; loan helper software; loan helper service; loan helper library; loan helper sdk; loan helper code; loan helper script; loan helper program; loan helper application; loan helper app; loan helper tool; loan helper utility; loan helper</PackageTags>
+    <PackageTags>loan payment calculator; loan; loan payments; loan payment calculator api; loan api</PackageTags>
     <Copyright>©2024 APIVerve. All Rights Reserved</Copyright>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <PackageIcon>favicon@128.png</PackageIcon>
+    <BaseOutputPath>.\bin</BaseOutputPath>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PackageId>APIVerve.API.LoanCalculator</PackageId>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <None Remove="LICENSE" />
+    <None Remove="Readme.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="LICENSE">
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Media\favicon@128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Update="Readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
