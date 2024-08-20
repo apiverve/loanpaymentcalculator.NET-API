@@ -57,7 +57,7 @@ namespace APIVerve
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="options"></param>
-        public void ExecuteAsync(ExecuteAsyncCallback callback, loanpaymentcalculatorQueryOptions options = null)
+        public void ExecuteAsync(ExecuteAsyncCallback callback, LoanCalculatorQueryOptions options = null)
         {
             ThreadPool.QueueUserWorkItem(state =>
             {
@@ -71,7 +71,7 @@ namespace APIVerve
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        public ResponseObj Execute(loanpaymentcalculatorQueryOptions options = null)
+        public ResponseObj Execute(LoanCalculatorQueryOptions options = null)
         {
             try
             {
@@ -89,6 +89,7 @@ namespace APIVerve
 
                 var request = WebRequest.Create(url);
                 request.Headers["x-api-key"] = _apiKey;
+                request.Headers["auth-mode"] = "nuget-package";
                 request.Method = _method;
 
                 if (_method == "POST")
@@ -149,7 +150,7 @@ namespace APIVerve
             }
         }
 
-        private string constructURL(loanpaymentcalculatorQueryOptions options)
+        private string constructURL(LoanCalculatorQueryOptions options)
         {
             string url = _apiEndpoint;
 
