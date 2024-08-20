@@ -70,7 +70,7 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```
-var queryOptions = new loanpaymentcalculatorQueryOptions {
+var queryOptions = new LoanCalculatorQueryOptions {
   loanAmount = 32000,
   interestRate = 8.5,
   loanTerm = 6
@@ -536,7 +536,8 @@ if(response.error != null) {
         "remaining_balance": 0
       }
     ]
-  }
+  },
+  "code": 200
 }
 ```
 
